@@ -3,14 +3,15 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      python: 3.8
+      python: 3.12  # Use a version supported by the build environment
     commands:
+      - echo "Installing dependencies..."
       - pip install -r requirements.txt
 
   build:
     commands:
-      - python -m unittest discover tests  # Replace with your test command
-      - python your_build_script.py  # Replace with your build script or commands
+      - echo "Running tests..."
+      - python -m unittest discover tests
 
 artifacts:
   files: '**/*'
@@ -19,4 +20,3 @@ artifacts:
 cache:
   paths:
     - '$HOME/.cache/pip'
-

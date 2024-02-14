@@ -1,0 +1,22 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.8
+    commands:
+      - pip install -r requirements.txt
+
+  build:
+    commands:
+      - python -m unittest discover tests  # Replace with your test command
+      - python your_build_script.py  # Replace with your build script or commands
+
+artifacts:
+  files: '**/*'
+  discard-paths: yes
+
+cache:
+  paths:
+    - '$HOME/.cache/pip'
+

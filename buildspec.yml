@@ -1,10 +1,22 @@
+# version: 0.2
+# phases:
+#   build:
+#     commands:
+#       - BUILD_NUMBER="$CODEBUILD_BUILD_NUMBER"
+#       - zip -r lambda_function_$BUILD_NUMBER.zip lambda_function.py
+# artifacts:
+#   files:
+#     - lambda_function_*.zip
 version: 0.2
-
 phases:
   build:
     commands:
-      - zip -r lambda_function.zip lambda_function.py
-
-artifacts:
-  files:
-    - lambda_function.zip
+      # Create a new zip file with a unique name based on the build number
+      - zip -r lambda_function_${CODEBUILD_BUILD_NUMBER}.zip lambda_function.py
+      - echo lambda_function_${CODEBUILD_BUILD_NUMBER}.zip > file_lambda_function
+      - aws s3 cp lambda_function_${CODEBUILD_BUILD_NUMBER}.zip s3://bucketfortrigger/lambda_function_${CODEBUILD_BUILD_NUMBER}.zip
+      - aws lambda update-function-code --function-name lambdafortrigger --s3-bucket bucketfortrigger --s3-key `cat file_lambda_function`
+# artifacts:
+#   files:
+#     # Include all zip files in the artifacts
+#     - lambda_function_${CODEBUILD_BUILD_NUMBER}.zip

@@ -1,28 +1,8 @@
 version: 0.2
-
 phases:
-  install:
-    runtime-versions:
-      python: 3.12  # Use a version supported by the build environment
-    commands:
-      - echo "Installing dependencies..."
-      - pip install -r requirements.txt
-
   build:
     commands:
-      - echo "Running tests..."
-      - python -m unittest discover tests
-
+      - zip -r lambda_function.zip lambda_function.py
 artifacts:
-  files: '**/*'
-  discard-paths: yes
-
-cache:
-  paths:
-    - '$HOME/.cache/pip'
-
-    install:
-  commands:
-    - pip install --upgrade pip
-    - pip install -r requirements.txt
-
+  files:
+    - lambda_function.zip

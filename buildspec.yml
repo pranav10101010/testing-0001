@@ -2,7 +2,7 @@ version: 0.2
 phases:
   build:
     commands:
-      zip -r -v lambda_function.zip lambda_function.py
+      zip -v lambda_function.zip lambda_function.py
 
 artifacts:
   files:

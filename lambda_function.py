@@ -7,10 +7,10 @@ def lambda_handler(event, context):
         'body': json.dumps('Hello sahil')
     }
 {
-  "LambdaFunctionConfigurations": [
-    {
-      "LambdaFunctionArn": "arn:aws:lambda:region:account-id:function:your-lambda-function",
-      "Events": ["s3:ObjectCreated:*", "s3:ObjectUpdated:*"]
-    }
-  ]
-}
+#   "LambdaFunctionConfigurations": [
+#     {
+#       "LambdaFunctionArn": "arn:aws:lambda:region:account-id:function:your-lambda-function",
+#       "Events": ["s3:ObjectCreated:*", "s3:ObjectUpdated:*"]
+#     }
+#   ]
+# }

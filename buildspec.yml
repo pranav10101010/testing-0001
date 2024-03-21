@@ -4,11 +4,6 @@ phases:
   install:
     runtime-versions:
       python: 3.8
-  pre_build:
-    commands:
-      - python -m venv /tmp/venv
-      - source /tmp/venv/bin/activate
-      - pip install Flask
   build:
     commands:
       - cp -r /tmp/venv/lib/python3.8/site-packages/* .

@@ -5,7 +5,7 @@ def lambda_handler(event, context):
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Homepage</title>
+        <title>Welcome to Our Online Bookstore</title>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -18,11 +18,11 @@ def lambda_handler(event, context):
             .container {
                 max-width: 800px;
                 margin: auto;
-                padding: 20px;
+                padding: 40px; /* Increased padding */
                 background-color: rgba(255, 255, 255, 0.9);
-                border-radius: 12px;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                transition: transform 0.3s ease-in-out;
+                border-radius: 8px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                border: 1px solid #ccc; /* Added border */
             }
             .container:hover {
                 transform: translateY(-5px);
@@ -48,17 +48,18 @@ def lambda_handler(event, context):
             img:hover {
                 transform: scale(1.05);
             }
-            .blog-link {
+            .book-link {
                 display: inline-block;
                 padding: 10px 20px;
-                background-color: #007BFF;
+                background-color: #000; /* Changed background color to black */
                 color: #fff;
                 text-decoration: none;
                 border-radius: 5px;
-                transition: background-color 0.3s ease;
+                transition: background-color 0.3s ease, transform 0.2s ease;
             }
-            .blog-link:hover {
-                background-color: #0056B3;
+            .book-link:hover {
+                background-color: #333; /* Darker background color on hover */
+                transform: translateY(-2px);
             }
             @keyframes spin {
                 from {
@@ -71,7 +72,12 @@ def lambda_handler(event, context):
             .logo {
                 display: block;
                 width: 100px;
+                height: 100px;
                 margin: 20px auto;
+                border-radius: 50%;
+                background-image: url('https://i.ibb.co/vvRPKFZ/logo.png');
+                background-size: cover;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
                 animation: spin 20s linear infinite;
             }
             @media only screen and (max-width: 600px) {
@@ -84,20 +90,19 @@ def lambda_handler(event, context):
                 }
                 .logo {
                     width: 80px;
+                    height: 80px;
                 }
             }
         </style>
     </head>
     <body>
         <div class="container">
-            <img src="https://i.ibb.co/m4PNrG8/devopslogo.jpg" alt="DevOps Logo" class="logo" />
-            <h1>Home</h1>
-            <p>Hi! My name is Pranav. Welcome to my website.</p>
-            <p>I'm passionate about DevOps, a set of practices that combines software development (Dev) and IT operations (Ops) to shorten the systems development life cycle and provide continuous delivery with high software quality.</p>
-            <img src="https://i.ibb.co/q5PDgNy/2202-i402-018-S-m004-c13-Devops-engineer-flat-composition.jpg" alt="DevOps Engineer" style="max-width: 100%; border-radius: 12px;" />
-            <p>Feel free to share!</p>
-            <p>Check out some <a href="/development/blog" class="blog-link">DevOps questions</a>.</p>
-            <img src="https://media.giphy.com/media/3oEjHTXfh8Qa2o5E3u/giphy.gif" alt="Rotating Earth" />
+            <div class="logo"></div>
+            <h1>Welcome to Our Online Bookstore</h1>
+            <p>Explore a wide range of books covering various genres and topics.</p>
+            <a href="https://ibb.co/fDD6b68"><img src="https://i.ibb.co/LNNjMjQ/bookgenre.jpg" alt="bookgenre" style="max-width: 100%; border-radius: 12px;" /></a>
+            <p>Check out some <a href="/prod/blog" class="book-link">books</a>.</p>
+            <p>Stay tuned for upcoming posts where we'll delve deeper into these topics and more!</p>
         </div>
     </body>
     </html>'''
@@ -107,5 +112,3 @@ def lambda_handler(event, context):
         'body': body
     }
     return response
-
-

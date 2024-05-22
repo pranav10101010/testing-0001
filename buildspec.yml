@@ -5,5 +5,5 @@ phases:
     commands:
       - zip -r lambda_function_${CODEBUILD_BUILD_NUMBER}.zip lambda_function.py
       - echo lambda_function_${CODEBUILD_BUILD_NUMBER}.zip > file_lambda_function
-      - aws s3 cp lambda_function_${CODEBUILD_BUILD_NUMBER}.zip s3://bucketforttrigger/lambda_function_${CODEBUILD_BUILD_NUMBER}.zip
-      - aws lambda update-function-code --function-name lambdafortrigger --s3-bucket bucketforttrigger --s3-key `cat file_lambda_function`
+      - aws s3 cp lambda_function_${CODEBUILD_BUILD_NUMBER}.zip s3://bucketforttttrigger/lambda_function_${CODEBUILD_BUILD_NUMBER}.zip
+      - aws lambda update-function-code --function-name lambdafortrigger --s3-bucket bucketforttttrigger --s3-key `cat file_lambda_function`

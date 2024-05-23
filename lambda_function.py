@@ -5,7 +5,7 @@ def lambda_handler(event, context):
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Welcome to Our Online Bookstore</title>
+        <title>Welcome to Our Bookstore</title>
         <style>
             body {
                 font-family: Arial, sans-serif;

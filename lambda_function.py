@@ -98,7 +98,7 @@ def lambda_handler(event, context):
     <body>
         <div class="container">
             <div class="logo"></div>
-            <h1>Welcome to Our Online Bookstore</h1>
+            <h1>Welcome to Our Bookstore</h1>
             <p>Explore a wide range of books covering various genres and topics.</p>
             <a href="https://ibb.co/fDD6b68"><img src="https://i.ibb.co/LNNjMjQ/bookgenre.jpg" alt="bookgenre" style="max-width: 100%; border-radius: 12px;" /></a>
             <p>Check out some <a href="/prod/blog" class="book-link">books</a>.</p>
